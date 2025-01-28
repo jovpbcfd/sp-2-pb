@@ -1,0 +1,232 @@
+.popular-games-gallery{
+    margin-top: 60px;
+    display: block;
+    margin-bottom: 60px;
+    .popular-game-title{
+        position: absolute;
+        z-index: 99;
+        width: 100%;
+        padding: 20px 0;
+        font-weight: 600;
+    }
+    .popular-game-slider{
+        padding: 0;
+        height: 100%;
+        .slick-list{
+            height: 100%;
+            .slick-track{
+                height: 100%;
+                display: flex;
+                .game-box-slide{
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    display: flex;
+                    align-items: center; 
+                    justify-content: center;
+                    overflow:hidden;
+                    position: relative;
+                    > img{
+                        max-width: 300px;
+                        height: auto;
+                        position: relative;
+                        z-index: 2;
+                    }
+                    .bg-img{
+                        max-width: unset;
+                        height: 120%;
+                        width: auto;
+                        object-fit: cover;
+                        position: absolute;
+                        z-index: 1;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        filter: blur(12px);
+                        opacity: 0.8;
+                        @media screen and (min-width: 981px) {
+                            max-width: 100%;
+                            height: 110%;
+                            width: auto;
+                            object-fit: cover;
+                            filter: blur(10px);
+                        }
+                    }
+                }
+            }
+        }
+        .slick-next{
+            right: 40px;
+        }
+        .slick-prev{
+            left: 40px;
+        }
+        .slick-next, .slick-prev{
+            z-index: 99;
+        }
+        @media  only screen and (max-width: 600px) {
+            .slick-next{
+                right: 10px;
+            }
+            .slick-prev{
+                left: 10px;
+            } 
+        }
+    }
+}
+.popular-games{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    > div{
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 2px solid transparent;
+        transition: all 200ms linear;
+        height: unset;
+        flex: 0 calc(50% - 10px);
+        height: 180px;
+        > img{
+            max-width: 100%;
+            height: 105%;
+            width: auto;
+            object-fit: cover;
+            transition: all 200ms linear;
+        }
+    }
+    > div:first-child{
+        flex: 0 100% !important;
+        height: 360px;
+    }
+    @media screen and (max-width: 480px) {
+        > div{
+            height: 130px;
+        }
+    }
+    @media screen and (min-width: 981px) {
+        margin: 40px auto;
+        display: grid; 
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+        gap: 10px;
+        
+        > div{
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            transition: all 200ms linear;
+            height: unset;
+            &:not(:first-child):hover{
+                cursor: pointer;
+                border: 2px solid var(--sunflower);
+                img{
+                    height: 105%;
+                    opacity: 0.8;
+                    
+                }
+            }
+            > img{
+                max-width: 100%;
+                height: 100%;
+                width: auto;
+                object-fit: cover;
+                transition: all 200ms linear;
+            }
+        }
+        .games-box:first-child {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-row-end: 3;
+            grid-column-end: 3;
+            position: relative;
+            overflow: hidden;
+            display: inline;
+            > div{
+                width: 100%;
+                height: 100%;
+            }
+        }
+            
+        
+    }
+}
+
+.promo-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    .promo-box{
+        padding: 20px;
+        border-radius: 20px;
+        border: 1px solid var(--blue-sky);
+        background-color: var(--darkBlue-opacity-10);
+        flex: 0  calc(50% - 40px);
+        transition: all 200ms linear;
+        &:hover{
+            background-color:var(--sunflower);
+            transform: translateY(-10px);
+            cursor: pointer;
+        }
+        @media screen and (max-width:980px ) {
+            flex: 0 100%;
+        }
+    }
+    .promo-img{
+        height: 300px;
+        width: 100%;
+        display: block;
+        img{
+            max-width: 100%;
+            height: 100%;
+            width: auto !important;
+            object-fit: cover;
+            object-position:  center;
+        }
+        @media screen and (max-width:1440px ) {
+            height: 170px;
+            img{
+                max-width: 100%;
+                height: 100%;
+                width: auto !important;
+                object-fit: cover;
+                object-position:  center;
+            }
+        }
+        @media screen and (max-width:1023px ) {
+            height: 150px;
+            img{
+                max-width: 100%;
+                height: 100%;
+                width: auto !important;
+                object-fit: cover;
+                object-position:  center;
+            }
+        }
+        @media screen and (max-width:980px ) {
+            height: auto;
+            img{
+                max-width: 100%;
+                height: auto;
+                width: auto !important;
+                object-fit: cover;
+                object-position:  center;
+            }
+        }
+    }
+    .promo-copy{
+        color: #fff;
+        h3{
+            margin-top: 20px;
+            font-size: 28px;
+        }
+        @media screen and (max-width:1023px ) {
+            h3{
+                margin-top: 20px;
+                font-size: 24px;
+            }
+        }
+    }
+}
